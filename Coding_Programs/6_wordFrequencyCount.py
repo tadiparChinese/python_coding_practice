@@ -5,6 +5,3 @@ def freqCount(str1):
 str1 = "hellohowareyou"
 print(freqCount(str1))
 
-
-git config --global user.email "pratiknagdeve.com"
-git config --global user.name "tadiparchinese"
