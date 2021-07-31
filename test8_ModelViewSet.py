@@ -9,10 +9,30 @@ router = DefaultRouter()
 
 #register StudentViewSet with Router
 
-router.register('studentapi', views.StudentViewSet, basename='student')
+router.register('studentapi', views.StudentModelViewSet, basename='student')
+
+#also
+router.register('studentapi', views.StudentReadOnlyModelViewSet, basename='student')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('studentapi/', views.StudentAPI.as_view()),
     path('', include(router.urls)),
-]
+] 
+
+
+#views
+
+from .models import Student
+from .serializer import StudentSerializer
+from rest_framework import viewsets
+
+class StudentModelViewSet(viewsets.ModelViewSet):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+
+
+
+#also
+class StudentReadOnlyModelViewSet(viewsets.ReadOnlyModelViewSet): #incase of readonly api to user eg: CovidAPI
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
