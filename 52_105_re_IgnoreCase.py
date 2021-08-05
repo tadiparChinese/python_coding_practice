@@ -1,4 +1,4 @@
-# In Python "re.IGNORECASE" flag can be added as a third parameter to the "match" or "search" method.
+# In Python "re.IGNORECASE" flag can be added as a third parameter to the "match" or "search" method. (Regular Expression)
 
 import re
 
