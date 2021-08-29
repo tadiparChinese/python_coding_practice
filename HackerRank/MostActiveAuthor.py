@@ -1,3 +1,12 @@
+# MOst Active Authors
+
+# url: https://jsonmock.hackerrank.com/api/article_users?page=<pageNumber>
+
+#threshold : integer that represents the threshold value for the number of submission COunt
+# function should return an array of strings representing the usernames of users whose submission count is greater than the given threshold
+
+# usernames in array must be ordered in order they appear in API response
+
 import requests
 import json
 
